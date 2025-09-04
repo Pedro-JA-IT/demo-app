@@ -1,16 +1,55 @@
-class P {
-  late double x;
-  late final double y;
-  P(this.x, this.y);
-  @override
-  String toString() {
-    return "( $x , $y)";
-  }
-}
+import 'package:flutter/material.dart';
 
-void main() {
-  P x = P(1, 3);
-  print(x);
-  x.x = 5;
-  print(x);
+class Custom extends SearchDelegate {
+  List movies = ['caca', 'mongols'];
+  List? filter;
+
+  @override
+  List<Widget>? buildActions(BuildContext context) {
+    return [
+      IconButton(
+          onPressed: () {
+            query = '';
+          },
+          icon: Icon(Icons.close))
+    ];
+  }
+
+  @override
+  Widget? buildLeading(BuildContext context) {
+    return IconButton(
+        onPressed: () {
+          close(context, null);
+        },
+        icon: Icon(Icons.arrow_back));
+  }
+
+  @override
+  Widget buildResults(BuildContext context) {
+    return Text("hush hush");
+  }
+
+  @override
+  Widget buildSuggestions(BuildContext context) {
+    if (query == '') {
+      return ListView.builder(
+        itemBuilder: (context, i) {
+          return Card(
+              child: Padding(
+            padding: const EdgeInsets.all(15),
+            child: Text(movies[i]),
+          ));
+        },
+        itemCount: movies.length,
+      );
+    } else {
+      filter = movies.where((element) => element.contains(query)).toList();
+      return ListView.builder(
+        itemBuilder: (context, i) {
+          return Card(child: Text("${filter![i]}"));
+        },
+        itemCount: filter!.length,
+      );
+    }
+  }
 }

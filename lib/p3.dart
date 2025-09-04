@@ -1,18 +1,41 @@
-import 'dd.dart';
-
-class Country {
-  final String city;
-  final String language;
-  final String capital;
-  Country(this.city, this.language, this.capital);
-
-  @override
-  String toString() {
-    return "hii";
-  }
-}
+import 'package:flutter/material.dart';
 
 void main() {
-  P x = P(5, 4);
-  Country c = Country("dd", "language", "capital");
+  runApp(test());
+}
+
+class test extends StatefulWidget {
+  test({super.key});
+
+  @override
+  _KKm createState() => _KKm();
+}
+
+class _KKm extends State<StatefulWidget> {
+  int i = 0;
+  bool n = true;
+  var k = Icon(Icons.star);
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        home: Scaffold(
+            body: Column(children: [
+      IconButton(
+          padding: EdgeInsets.all(50),
+          onPressed: () {
+            if (n) {
+              n = false;
+              setState(() {
+                k = Icon(Icons.star_outline);
+              });
+            } else {
+              n = true;
+              setState(() {
+                k = Icon(Icons.star);
+              });
+            }
+          },
+          icon: k)
+    ])));
+  }
 }

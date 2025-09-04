@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
-class FirstApp extends StatelessWidget {
-  const FirstApp({super.key});
-
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,8 +20,7 @@ class FirstApp extends StatelessWidget {
 
           //Icon(Icons.list, color: Colors.amber, size: 30  ),
 
-          title:
-              const Text("Online Shop", style: TextStyle(color: Colors.amber)),
+          title: const Text("ZEE Shop", style: TextStyle(color: Colors.amber)),
           centerTitle: true,
           actions: [
             IconButton(
@@ -53,8 +51,8 @@ class FirstApp extends StatelessWidget {
               label: 'Shopping cart',
             ),
           ],
-          selectedLabelStyle: const TextStyle(color: Colors.white),
-          unselectedLabelStyle: const TextStyle(color: Colors.white),
+          selectedLabelStyle: TextStyle(color: Colors.white),
+          unselectedLabelStyle: TextStyle(color: Colors.white),
           currentIndex: 0,
           selectedItemColor: Colors.amber[800],
           unselectedItemColor: Colors.white,
@@ -65,8 +63,8 @@ class FirstApp extends StatelessWidget {
             child: ListView(children: [
               Container(
                   height: 400,
-                  margin: const EdgeInsets.all(30),
-                  padding: const EdgeInsets.all(30),
+                  margin: EdgeInsets.all(30),
+                  padding: EdgeInsets.all(30),
                   // height: 300,
                   decoration: const BoxDecoration(
                       color: Colors.black,
@@ -97,7 +95,7 @@ class FirstApp extends StatelessWidget {
                           },
                           child: Container(
                               width: 85,
-                              margin: const EdgeInsets.all(15),
+                              margin: EdgeInsets.all(15),
                               color: Colors.amber,
                               child: const Row(children: [
                                 Text("Purchase", style: TextStyle()),
@@ -111,8 +109,8 @@ class FirstApp extends StatelessWidget {
               //=============second item =================
               Container(
                   height: 400,
-                  margin: const EdgeInsets.all(30),
-                  padding: const EdgeInsets.all(30),
+                  margin: EdgeInsets.all(30),
+                  padding: EdgeInsets.all(30),
                   // height: 300,
                   decoration: const BoxDecoration(
                       color: Colors.black,
@@ -144,7 +142,7 @@ class FirstApp extends StatelessWidget {
                           },
                           child: Container(
                               width: 85,
-                              margin: const EdgeInsets.all(15),
+                              margin: EdgeInsets.all(15),
                               color: Colors.amber,
                               child: const Row(children: [
                                 Text("Purchase", style: TextStyle()),
@@ -157,8 +155,8 @@ class FirstApp extends StatelessWidget {
                       ])),
               Container(
                   height: 400,
-                  margin: const EdgeInsets.all(30),
-                  padding: const EdgeInsets.all(30),
+                  margin: EdgeInsets.all(30),
+                  padding: EdgeInsets.all(30),
                   // height: 300,
                   decoration: const BoxDecoration(
                       color: Colors.black,
@@ -191,7 +189,7 @@ class FirstApp extends StatelessWidget {
                           },
                           child: Container(
                               width: 85,
-                              margin: const EdgeInsets.all(15),
+                              margin: EdgeInsets.all(15),
                               color: Colors.amber,
                               child: const Row(children: [
                                 Text("Purchase", style: TextStyle()),
