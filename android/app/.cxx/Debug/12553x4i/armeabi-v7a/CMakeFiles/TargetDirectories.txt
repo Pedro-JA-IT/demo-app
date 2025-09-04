@@ -1,0 +1,2 @@
+C:/Users/VICTUS/AndroidStudioProjects/untitled4/android/app/.cxx/Debug/12553x4i/armeabi-v7a/CMakeFiles/edit_cache.dir
+C:/Users/VICTUS/AndroidStudioProjects/untitled4/android/app/.cxx/Debug/12553x4i/armeabi-v7a/CMakeFiles/rebuild_cache.dir
