@@ -77,23 +77,33 @@ class _SettingsState extends State<Settings> {
                     setState(() {
                       isLoading = true;
                     });
+                    final user = FirebaseAuth.instance.currentUser;
+                    if (user == null || user.email == null) return;
                     await FirebaseAuth.instance
-                        .sendPasswordResetEmail(email: userData[0]['Email']);
+                        .sendPasswordResetEmail(email: user.email!);
                     AwesomeDialog(
                       context: context,
                       dialogType: DialogType.success,
                       animType: AnimType.rightSlide,
                       title: 'Requset Confirmed',
                       desc: 'Hit you\'r Email And Reset The password',
-                      btnOkOnPress: () {},
+                      btnOkOnPress: () {
+                        Navigator.of(context).pop();
+                      },
                     ).show();
-                  } catch (e) {
+                  } on FirebaseAuthException catch (e) {
+                    // Specific error handling for different firebase auth errors
+                    String errorMessage =
+                        'An error occurred. Please try again.';
+                    if (e.code == 'user-not-found') {
+                      errorMessage = 'Account Doesn\'t Exist.';
+                    }
                     AwesomeDialog(
                             context: context,
                             dialogType: DialogType.error,
                             animType: AnimType.rightSlide,
                             title: 'Error',
-                            desc: 'Account Doesn\'t Exists',
+                            desc: errorMessage,
                             btnOkOnPress: () {},
                             btnOkColor: Colors.orange)
                         .show();
@@ -123,10 +133,6 @@ class _SettingsState extends State<Settings> {
                     )),
               ),
             ])),
-        if (isLoading)
-          Positioned.fill(
-            child: c,
-          ),
       ],
     );
   }

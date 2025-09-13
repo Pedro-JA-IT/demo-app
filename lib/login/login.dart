@@ -11,6 +11,7 @@ class Login extends StatefulWidget {
   @override
   State<Login> createState() => _LoginState();
 }
+// back End ///////////////////////////////////////////////////
 
 class _LoginState extends State<Login> {
   Future<UserCredential?> signInWithGoogle() async {
@@ -51,6 +52,7 @@ class _LoginState extends State<Login> {
     Navigator.of(context).pushReplacementNamed("homepage");
     return userCredential;
   }
+  ////////////////////////////////////////////////
 
   late GlobalKey<FormState> passwd = GlobalKey();
   late TextEditingController eml;
@@ -69,6 +71,7 @@ class _LoginState extends State<Login> {
   late GlobalKey<FormState> login;
   @override
   void initState() {
+    ////// to send the data to the back
     eml = TextEditingController();
     pass = TextEditingController();
     passwd = GlobalKey();
@@ -291,6 +294,7 @@ class _LoginState extends State<Login> {
                                     ),
                                   ),
                                 const SizedBox(width: 8),
+                                ////////////////////////obsecure text algo (eye)
                                 IconButton(
                                   onPressed: () {
                                     setState(() {

@@ -193,23 +193,26 @@ class _DetailPageState extends State<DetailPage> {
                     ),
                   ),
                   Positioned(
-                    bottom: 20,
-                    left: 20,
+                    bottom: sheight * 0.02,
+                    left: swidth * 0.04,
+                    right: swidth * 0.04,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          data['title'] ?? 'No Title',
-                          style: theme.textTheme.headlineMedium?.copyWith(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            shadows: const [
-                              Shadow(
-                                color: Colors.black,
-                                blurRadius: 10,
-                                offset: Offset(2, 2),
-                              )
-                            ],
+                        FittedBox(
+                          child: Text(
+                            data['title'] ?? 'No Title',
+                            style: theme.textTheme.headlineMedium?.copyWith(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              shadows: const [
+                                Shadow(
+                                  color: Colors.black,
+                                  blurRadius: 10,
+                                  offset: Offset(2, 2),
+                                )
+                              ],
+                            ),
                           ),
                         ),
                         const SizedBox(height: 8),
@@ -256,7 +259,7 @@ class _DetailPageState extends State<DetailPage> {
                     ),
                   ),
                   Positioned(
-                    bottom: sheight * 0.03,
+                    bottom: sheight * 0.01,
                     right: swidth * 0.054,
                     child: Row(
                       children: [
